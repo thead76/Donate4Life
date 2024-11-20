@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Group and Location Selection</title>
+    <style>
+        .form-group {
+            display: grid;
+            grid-template-columns: 150px 1fr;  /* Set a fixed width for labels and flexible width for select */
+            align-items: center;
+            margin: 10px 0;
+        }
+        .form-group label {
+            text-align: left; /* Left-align the label text */
+        }
+        select {
+            padding: 10px;
+            margin: 5px 0;
+            width: 100%; /* Ensure the select boxes take full available width */
+            max-width: 300px; /* Limit the select box width */
+        }
+        .form-container {
+            width: 100%;
+            max-width: 400px; /* Container width to ensure consistency */
+            margin: 0 auto; /* Center the form on the page */
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <!-- Blood Group Selection -->
+    <div class="form-group">
+        <label for="blood-group">Select Blood Group:</label>
+        <select id="blood-group">
+            <option value="">--Select Blood Group--</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+        </select>
+    </div>
+
+    <!-- Country Selection (Preselected to India) -->
+    <div class="form-group">
+        <label for="country">Select Country:</label>
+        <select id="country" disabled>
+            <option value="India">India</option>
+        </select>
+    </div>
+
+    <!-- State Selection -->
+    <div class="form-group">
+        <label for="state">Select State:</label>
+        <select id="state" onchange="populateDistricts()">
+            <option value="">--Select State--</option>
+        </select>
+    </div>
+
+    <!-- District Selection -->
+    <div class="form-group">
+        <label for="district">Select District:</label>
+        <select id="district" onchange="populateCities()">
+            <option value="">--Select District--</option>
+        </select>
+    </div>
+
+    <!-- Famous City Selection -->
+    <div class="form-group">
+        <label for="city">Select Famous City:</label>
+        <select id="city">
+            <option value="">--Select Famous City--</option>
+        </select>
+    </div>
+</div>
+
+<script>
+    // Define states, districts, and cities data
+    const locationData = {
+        "Maharashtra": {
+            "Pune": ["Pune City", "Lonavala", "Talegaon"],
+            "Mumbai": ["Mumbai City", "Thane", "Navi Mumbai"]
+        },
+        "Karnataka": {
+            "Bangalore": ["Bangalore City", "Mysore", "Hubli"],
+            "Mangalore": ["Mangalore City", "Udupi", "Manipal"]
+        },
+        "Tamil Nadu": {
+            "Chennai": ["Chennai City", "Kanchipuram", "Mahabalipuram"],
+            "Coimbatore": ["Coimbatore City", "Erode", "Tiruppur"]
+        }
+    };
+
+    // Populate states
+    window.onload = function() {
+        const stateSelect = document.getElementById("state");
+        for (const state in locationData) {
+            const option = document.createElement("option");
+            option.value = state;
+            option.textContent = state;
+            stateSelect.appendChild(option);
+        }
+    };
+
+    // Populate districts based on selected state
+    function populateDistricts() {
+        const stateSelect = document.getElementById("state");
+        const districtSelect = document.getElementById("district");
+        const citySelect = document.getElementById("city");
+        const selectedState = stateSelect.value;
+
+        // Clear previous options
+        districtSelect.innerHTML = '<option value="">--Select District--</option>';
+        citySelect.innerHTML = '<option value="">--Select Famous City--</option>';
+
+        if (selectedState) {
+            const districts = locationData[selectedState];
+            for (const district in districts) {
+                const option = document.createElement("option");
+                option.value = district;
+                option.textContent = district;
+                districtSelect.appendChild(option);
+            }
+        }
+    }
+
+    // Populate famous cities based on selected district
+    function populateCities() {
+        const stateSelect = document.getElementById("state");
+        const districtSelect = document.getElementById("district");
+        const citySelect = document.getElementById("city");
+        const selectedState = stateSelect.value;
+        const selectedDistrict = districtSelect.value;
+
+        // Clear previous options
+        citySelect.innerHTML = '<option value="">--Select Famous City--</option>';
+
+        if (selectedState && selectedDistrict) {
+            const cities = locationData[selectedState][selectedDistrict];
+            cities.forEach(city => {
+                const option = document.createElement("option");
+                option.value = city;
+                option.textContent = city;
+                citySelect.appendChild(option);
+            });
+        }
+    }
+</script>
+
+</body>
+</html>

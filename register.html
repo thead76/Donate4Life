@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="style-register.css" />
+  </head>
+  <body>
+      <header>
+        <div class="header-container">
+        <div class="logo1">
+        <img src="images/logo.png" alt="logo" />
+        </div>
+        <div class="logo2">
+            <a href="index.html">
+            <img src="images/inner_findblooddonor.gif" alt="register">
+            </a>
+        </div>
+        </div>
+      </header>
+    </div>
+      <div id="blood_drop_search-main">
+        <div class="form-element">
+          <form id="selectionForm">
+            <p>REGISTER AS A BLOOD DONOR</p>
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="full-name" name="full-name" required>
+                <label for="mobile-number">Mobile No:</label>
+                <input type="tel" id="mobile-number" name="mobile-number" pattern="[0-9]{10}" required>
+                <label for="email-id">Email Id:</label>
+                <input type="email" id="email-id" name="email-id" required>
+              <label for="blood-group">Blood Group:</label>
+              <select id="blood-group">
+                <option value="">----Select----</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="country">Select Country:</label>
+              <select id="country" disabled>
+                <option value="India">India</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="state">Select State:</label>
+              <select id="state" onchange="populateDistricts()">
+                <option value="">----Select----</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="district">Select District:</label>
+              <select id="district" onchange="populateCities()">
+                <option value="">----Select----</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="city">Select City:</label>
+              <select id="city">
+                <option value="">----Select----</option>
+              </select>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="term" name="term" required>
+                <label for="term">I authorise this website to display my name and telephone number, so that the needy could contact me, as and when there is an emergency.</label>
+            </div>
+            <div class="form-button">
+              <button type="button">Submit</button>
+            </div>
+          </form>
+        </div>
+        <div class="drop">
+          <img src="images/blood_drop_search - Copy.jpg" alt="blood_drop_search" />
+        </div>
+      </div>
+      <div class="floating-message">
+        <marquee behavior="scroll" direction="left" scrollamount="4"
+          >Your selfless act of donating blood is a gift of life—thank you for being a hero to those in need!</marquee
+        >
+      </div>
+      <div class="pic">
+        <img src="images/img_temp1.jpg" alt="img">
+      </div>
+
+    <footer>
+        <div class="container">
+          <!-- Social Media Links -->
+          <div class="icon-group">
+              <p>FOLLOW US</p>
+              <a href="https://www.facebook.com" target="_blank">
+                  <img src="images/facebook.svg" alt="Facebook">
+              </a>
+              <a href="https://www.twitter.com" target="_blank">
+                  <img src="images/twitter.svg" alt="Twitter">
+              </a>
+              <a href="https://www.youtube.com" target="_blank">
+                  <img src="images/youtube.svg" alt="YouTube">
+              </a>
+          </div>
+  
+          <!-- App Download Links -->
+          <div class="icon-group">
+              <p>DOWNLOAD APPS</p>
+              <a href="https://play.google.com/store" target="_blank">
+                  <img src="images/android.svg" alt="Android">
+              </a>
+              <a href="https://www.microsoft.com/store/apps" target="_blank">
+                  <img src="images/windows.svg" alt="Windows">
+              </a>
+              <a href="https://www.apple.com/app-store/" target="_blank">
+                  <img src="images/ios.svg" alt="iOS">
+              </a>
+          </div>
+      </div>
+      <p class="text">Copyrights © 2024 - 2026, All Rights Reserved. Site Designed & Maintained By Donate4life.org</p>
+      </footer>
+      <script src="script.js"></script>
+    </body>
+  </html>
+  

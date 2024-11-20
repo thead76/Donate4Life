@@ -1,0 +1,120 @@
+body{
+    background-color: #f3eff0;
+    margin: 0;
+    padding: 0;
+    margin-top: 2rem;
+    margin-left: 15%;
+    margin-right: 15%;
+    align-items: center;
+}
+header{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#blood_drop_search-main{
+    display: flex;
+    height: 500px;
+    width: 100%;
+    background-color:#c42522;
+    margin-top: 30px;
+    border-radius: 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+.form-element{
+    width: 50%;
+    color: white;
+    margin: 2rem;
+}
+a{
+    font-size: medium;
+}
+p{
+    font-size: 2rem;
+}
+label{
+    margin: 10px 0px 5px;
+    margin-right: 20px;
+}
+.form-group {
+    display: grid;
+    grid-template-columns: 150px 1fr;  
+    align-items: center;
+    margin: 10px 0;
+}
+.form-group label {
+    text-align: left; 
+}
+select {
+    padding: 10px;
+    margin: 5px 0;
+    width: 70%;
+    max-width: 200px; 
+}
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto; 
+}
+button {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 43%;
+}
+button:hover {
+    background-color: #f1f1f1;
+}
+.drop img{
+    height: 497px;
+    
+}
+.floating-message {
+    color: #ff6600;
+    font-size: 24px;
+    font-weight: bold;
+} 
+.register-img img{
+    width: 100%;
+}
+.footer-element{
+    height: 100px;
+    width: 100%;
+}
+.footer{
+    background-color: #f3eff0;
+}
+.container {
+    text-align: center;
+    padding: 20px;
+    border-top: 3px solid red;
+}
+.icon-group {
+    display: inline-block;
+    margin: 0 30px;
+}
+.icon-group img {
+    width: 30px; /* Adjust the size based on your icons */
+    margin: 0 10px;
+}
+.icon-group p {
+    color: #09033e;
+    margin: 0;
+    font-weight: bold;
+    font-size: medium;
+}
+.text{
+    color: blue;
+    font-size: medium;
+    text-align: center;
+}
+
